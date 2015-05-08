@@ -12,9 +12,9 @@ end
 def parse_doc(doc)
   result = []
   doc.xpath('//div[@class="entry-meta"]').each do |entry|
-    session_name = entry.xpath('a[1]/text()')
-    session_code = entry.xpath('ul[@class="details"]/li[@class="timing code"]/a/text()')
-    downloads = entry.xpath('ul[@class="details"]/li[@class="slides presentation"]/a/@href')
+    session_name = entry.xpath('a[1]/text()').to_s
+    session_code = entry.xpath('ul[@class="details"]/li[@class="timing code"]/a/text()').to_s
+    downloads = entry.xpath('ul[@class="details"]/li[@class="slides presentation"]/a/@href').to_s
     puts "#{session_name}, #{session_code}, #{downloads}"
     result << {
       'session_name' => session_name,
