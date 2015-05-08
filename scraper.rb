@@ -31,5 +31,7 @@ urls.each do |url|
   puts "Fetching #{url}"
   doc = Nokogiri::HTML.parse(open(url))
   data = parse_doc(doc)
+  
+  puts "#SAVE!!"
   ScraperWiki.save(['session_name', 'session_code', 'downloads'], data)
 end
