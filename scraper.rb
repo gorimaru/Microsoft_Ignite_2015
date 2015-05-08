@@ -26,7 +26,7 @@ def parse_doc(doc)
   result
 end
 
-urls = (1..5).map {|i| "http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013?sort=status&direction=asc&page=#{i}" }
+urls = (1..5).map {|i| "http://channel9.msdn.com/Events/Ignite/2015?sort=status&direction=asc&page=#{i}" }
 urls.each do |url|
   puts "Fetching #{url}"
   doc = Nokogiri::HTML.parse(open(url))
